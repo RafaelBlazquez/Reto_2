@@ -1,10 +1,10 @@
 </div>
-    <div id="cookies">
+    <div id="cookies"style="width:24%">
         <p>
             Nuestro sitio web utiliza cookies para su correcto funcionamiento, al navegar, te comprometes a que te guardemos cookies en tu equipo para poder mejorar nuestros servicios.
         </p>
-        <button>rechazar</button>
-        <button onclick="siACookies()">aceptar</button>
+        <button>Rechazar</button>
+        <button onclick="siACookies()">Aceptar</button>
     </div>
     <footer>
         <p>

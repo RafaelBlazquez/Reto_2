@@ -6,7 +6,7 @@ if (!(strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png"))) {
     return "solo se admiten imagenes en formato .png o .jpg";
 }else {*/
 
-    $target_dir = "imagenes/subidas/";
+    $target_dir = "../imagenes/subidas/";
 
     $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
     $uploadOk = 1;

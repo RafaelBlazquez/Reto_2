@@ -13,7 +13,7 @@ function ocultarMenu() {
 }
 
 function mostrarAdminAnuncios() {
-    $("#div_anuncios").css("display","flex");
+    $("#div_anuncios").css("display","grid");
     $("#div_formulario").css("display","none");
 
     // el boton se muestra seleccionado y no hace nada mas

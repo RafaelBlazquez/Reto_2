@@ -114,15 +114,20 @@
             <script>
                 $(document).ready(function(){
                     var allCookies=document.cookie
-                    var comienzoCookieProductos=allCookies.search("producto=");
-                    var finalcookieProductos=allCookies.indexOf(";");
-                    if(finalcookieProductos==-1){
-                        finalcookieProductos=document.cookie.length;
+                    var separada=allCookies.split(";");
+                    for(var i=0;i<separada.length;i++){
+                        if(separada[i].search("producto=")!=-1){
+                            //Guardo
+                            console.log("cOOKIE" + separada[i]);
+                            var carritoFinal=separada[i].split("=");
+                            var contenidoCarrito=carritoFinal[1];
+                            break;
+                        }
                     }
-                    var carrito=[];
-                    var productos=document.cookie.slice(comienzoCookieProductos+9,finalcookieProductos);
                     
-                    productos=productos.substring(0,(productos.length-1));//Borro el ultimo "-" de la cookie producto
+                    var carrito=[]
+                    console.log(contenidoCarrito);
+                    var productos=contenidoCarrito.substring(0,(contenidoCarrito.length-1));//Borro el ultimo "-" de la cookie producto
                     var productosSplit=productos.split("-");   
                     productosSplit.forEach(function(obj){//Obj es cada elemento seleccionado para la compra.
                         carrito.push(obj);
@@ -144,6 +149,7 @@
                                 statusCode: {500:() => serverError()},
                                 async:false,
                                 success: function(respuesta){
+                                    console.log(respuesta)
                                     for(var p in respuesta){                      
                                         var nombre=respuesta[p][0];
                                         var imagen=respuesta[p][1];
@@ -265,7 +271,7 @@
         </tbody>
     </table>
     <!--Div con Subtotal-->
-    <div style="width: 100%;height: 25vh;background-color: rgb(63, 63, 63);bottom: 0%;">
+    <div style="width: 100%;height: 40vh;background-color: rgb(63, 63, 63);bottom: 0%;">
         <table style="width: 92%;">
             <thead>
                 <tr style="color:gray">
@@ -279,7 +285,7 @@
               </thead>
         </table>
         <button id="comprar" type="button" class="btn btn-outline-light" style="margin-left: 2.5%;margin-right:8.2%;margin-top:1%;float: right;width: 20%;">Comprar</button><br><br><br>
-        <button id="seguirComprando" type="button" class="btn btn-outline-primary" style="margin-left: 2.5%;margin-right:8.2%;float: right;width: 20%;" onclick="window.location.replace('../../view/index.php')">Seguir Comprando</button>
+        <button id="seguirComprando" type="button" class="btn btn-outline-primary" style="margin-left: 2.5%;margin-right:8.2%;float: right;width: 20%;" onclick="window.location.replace('index.php')">Seguir Comprando</button>
     </div>
 </div>
 

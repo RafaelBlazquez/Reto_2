@@ -1,6 +1,7 @@
 <?php require"parts/header.php"?>
 <?php require"basedatos/conexionBD.php"?>
 <?php require"parts/aside.php"?>
+<?php require"baseDatos/Recientes.php"?>
 <link rel="stylesheet" href="./css/anuncio.css">
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <script src="./javascript/bootstrap.bundle.min.js"></script>
@@ -36,7 +37,7 @@
                 </svg></button>
                  <?php
                  if (isset($usuarioNombre)&& esComprador($baseDatos,$idUsuario)){
-                    echo "<button id=\"anadirFav\">favorito</button>" ;
+                    echo "<button id=\"anadirFav\">Fav</button>" ;
                 }
                 
                 ?>

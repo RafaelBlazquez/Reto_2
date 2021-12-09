@@ -19,6 +19,7 @@ a.busqueda{
     font-size: 1.4em;
     margin: 5px;
     align-self: center;
+    text-transform: capitalize;
 }
 a.categoria{
     background-color: rgb(125, 182, 144);

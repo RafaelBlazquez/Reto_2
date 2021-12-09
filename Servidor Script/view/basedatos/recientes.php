@@ -2,7 +2,7 @@
     
     function anadirReciente($reciente){
         session_start();
-        if(isset($_SESSION['usuario'])){
+        if(isset($_SESSION["usuario"])){
             if(!isset($_SESSION['recientes'])){
                 $arrayRecientes= array($reciente);
             }

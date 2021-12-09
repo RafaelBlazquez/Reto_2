@@ -2,9 +2,7 @@
 <?php require"basedatos/conexionBD.php"?>
 <?php require"basedatos/selectAnuncios.php"?>
 <script src="./javascript/controlador.js"></script>
-<script>
-        document.cookie = "anchuraPantalla="+window.innerWidth+";";
-    </script>
+
     <main>
         <div id="bDecor">
             <button id="anun" onclick="mostrarAdminAnuncios()">Consultar</button>
@@ -67,9 +65,9 @@
                 <label for="tit">Titulo:</label>
                 <input type="text" name="nombre" id="tit" maxlength="20">
                 <label for="ref">Ref:</label>
-                <input type="text" name="ref" id="ref" maxlength="20" disabled>
+                <input type="text" name="ref" id="ref" maxlength="20" value=<?php echo '"'.$refs['telefono'].'"'?> disabled>
                 <label for="emp">Empresa:</label>
-                <input type="text" name="empresa" id="emp" maxlength="20" disabled>
+                <input type="text" name="empresa" id="emp" maxlength="20" value=<?php echo '"'.$refs['nomEmpresa'].'"'?> disabled>
                 <label for="loc">Localizacion:</label>
                 <input type="text" name="loc" id="loc" maxlength="20">
                 <label for="pre">Precio:</label>
@@ -146,7 +144,7 @@
                                 type: "POST",
                                 url: "./basedatos/insertAnuncio.php",             
                                 dataType: "text", 
-                                data: {titulo:titulo,localizacion:localizacion,precio:precio,categoria:categoria,descripcion:descripcion,imagen:urlImagen},        
+                                data: {titulo:titulo,localizacion:localizacion,precio:precio,categoria:categoria,descripcion:descripcion,imagen:urlImagen,usuario:"<?php echo $_SESSION["usuario"]?>"},        
                                 statusCode: {500:() => serverError()},
                                 success: function(respuesta){
                                     if(respuesta.length>0){

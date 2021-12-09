@@ -2,11 +2,12 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    text-transform: capitalize;
+    
 }
 a{
     text-decoration: none;
 }
+
 header, nav,footer{
     background-color: #73ad89;
 }
@@ -38,6 +39,10 @@ header a{
     text-decoration: none;
     font-size: 1.5em;
 }
+a:hover{
+    color: #009B7D !important;
+}
+
 header nav{
     width: 65%;
     height: 35%;
@@ -78,6 +83,12 @@ header nav button#inicioSesion{
     border: 1px solid white;
     padding: 1vh 2vh;
     border-radius: 1vh;
+}
+header #logo {
+    width: 12%;
+}
+header #logo img {
+    width: 100%;
 }
 #div_Binicio {
     background-color: ivory;
@@ -125,6 +136,7 @@ aside div:first-of-type{
 }
 a.opcion{
     text-align: center;
+    text-transform: capitalize;
 }
 .menu {
     position: relative;
@@ -155,6 +167,7 @@ a.opcion{
     border-radius: 1vh;
     text-align: center;
     margin: 2% 20%;
+    text-transform: capitalize;
 
 }
 .opcion{
@@ -212,6 +225,7 @@ section{
 }
 .titulo{
     grid-area: uno;
+    text-transform: capitalize;
 }
 .primero{
     grid-area: dos;
